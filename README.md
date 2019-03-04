@@ -3,11 +3,12 @@
 Sometimes, we need to ENRICH and/or DEPLETE next generation sequencing data sets for a particular scaffolds
 Below are some command lines using BWA-mem + Samtools to do so for paired end Illumina data sets
 
-Note that analyses were run on a linux platform, BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path
-
 All files are placed and output in the current directory
-Raw zipped data as .fastq.gz
-The "query.fasta" file includes scaffolds/sequences
+Raw zipped data as *.fastq.gz*
+The *query.fasta* file includes the scaffolds
+
+Note that analyses were run on a linux platform
+BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path
 
 **1) Index the sequence file**
 
@@ -22,20 +23,19 @@ The "query.fasta" file includes scaffolds/sequences
 *samtools index query.sorted.bam*
 
 # ENRICH (Keep matching reads)
-** Enrich by pulling out reads mapping to the query (with -F flag and integer 4)**
+**Enrich by pulling out reads mapping to the query (with -F flag and integer 4)**
 
 *samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam*
 
-** Extract the reads mapping to query in a fastq file**
+**Extract the reads mapping to query in a fastq file**
 
 *samtools fastq -F 4 enriched.sorted.bam > enriched.fastq*
 
 # and/or DEPLETE (Keep non-matching reads)
-** Deplete by pulling out reads not mapping to query (with -f flag and integer 4)**
+**Deplete by pulling out reads not mapping to query (with -f flag and integer 4)**
 
 *samtools view -b -f 4 query.sorted.bam > depleted.sorted.bam*
 
-** extract reads not mapping to query in a fastq file**
+**Extract reads not mapping to query in a fastq file**
 
 *samtools fastq -f 4 depleted.sorted.bam > depleted.fastq*
-
