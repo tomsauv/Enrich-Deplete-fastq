@@ -37,17 +37,22 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 *samtools fastq -f 4 depleted.sorted.bam > depleted.fastq*
 
 # COUNT reads in fastq files to check
-**Initial fastq file**<br/>
+**Initial fastq file (R1)**<br/>
 
-*echo "Raw"> counts.txt*<br/>
+*echo "Raw (R1)" > counts.txt*<br/>
 *echo $(zcat R1.fastq.gz|wc -l)/4|bc >> counts.txt*<br/>
 
-**Enriched fastq file**<br/>
+**Initial fastq file (R2)**<br/>
+
+*echo "Raw (R2)" >> counts.txt*<br/>
+*echo $(zcat R2.fastq.gz|wc -l)/4|bc >> counts.txt*<br/>
+
+**Enriched fastq file (R1+R2)**<br/>
 
 *echo "Enriched" >> counts.txt*<br/>
 *echo $(cat enriched.fastq|wc -l)/4|bc >> counts.txt*<br/>
 
-**Depleted fastq file**<br/>
+**Depleted fastq file (R1+R2)**<br/>
 
 *echo "Depleted" >> counts.txt*<br/>
 *echo $(cat depleted.fastq|wc -l)/4|bc >> counts.txt*<br/>
