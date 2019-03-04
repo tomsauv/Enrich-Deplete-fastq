@@ -2,8 +2,7 @@
 
 Sometimes, we need to ENRICH and/or DEPLETE next generation sequencing data sets for particular scaffolds<br/>
 
-Below are some command lines using BWA-mem + Samtools to do so for paired end Illumina data sets<br/>
-All initial files and resulting output in the current directory<br/>
+Below are some command lines using BWA-mem + Samtools to do so<br/>
 
 BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with 40 cores<br/>
 
