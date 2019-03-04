@@ -22,20 +22,20 @@ We want to enrich/deplete based on scaffolds/sequences found in the "query.fasta
 *samtools index query.sorted.bam*
 
 # ENRICH
-**4) Enrich by pulling out reads mapping to the query (with -F flag and integer 4)**
+** Enrich by pulling out reads mapping to the query (with -F flag and integer 4)**
 
 *samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam*
 
-**5) Extract the reads mapping to query in a fastq file**
+** Extract the reads mapping to query in a fastq file**
 
 *samtools fastq -F 4 enriched.sorted.bam > enriched.fastq*
 
-# AND/OR DEPLETE
-**6) Deplete by pulling out reads not mapping to query (with -f flag and integer 4)**
+# and/or DEPLETE
+** Deplete by pulling out reads not mapping to query (with -f flag and integer 4)**
 
 *samtools view -b -f 4 query.sorted.bam > depleted.sorted.bam*
 
-**7) extract reads not mapping to query in a fastq file**
+** extract reads not mapping to query in a fastq file**
 
 *samtools fastq -f 4 depleted.sorted.bam > depleted.fastq*
 
