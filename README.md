@@ -49,12 +49,12 @@ Here, BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platfor
 
 **Enriched fastq file (contains R1+R2)**<br/>
 
-*echo "Enriched" >> counts.txt*<br/>
+*echo "Enriched (R1+R2)" >> counts.txt*<br/>
 *echo $(cat enriched.fastq|wc -l)/4|bc >> counts.txt*<br/>
 
 **Depleted fastq file (contains R1+R2)**<br/>
 
-*echo "Depleted" >> counts.txt*<br/>
+*echo "Depleted (R1+R2)" >> counts.txt*<br/>
 *echo $(cat depleted.fastq|wc -l)/4|bc >> counts.txt*<br/>
 
 **Display counts on screen**<br/>
