@@ -47,12 +47,12 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 *echo "Raw (R2)" >> counts.txt*<br/>
 *echo $(zcat R2.fastq.gz|wc -l)/4|bc >> counts.txt*<br/>
 
-**Enriched fastq file (R1+R2)**<br/>
+**Enriched fastq file (contains R1+R2)**<br/>
 
 *echo "Enriched" >> counts.txt*<br/>
 *echo $(cat enriched.fastq|wc -l)/4|bc >> counts.txt*<br/>
 
-**Depleted fastq file (R1+R2)**<br/>
+**Depleted fastq file (contains R1+R2)**<br/>
 
 *echo "Depleted" >> counts.txt*<br/>
 *echo $(cat depleted.fastq|wc -l)/4|bc >> counts.txt*<br/>
@@ -61,7 +61,7 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 
 *head counts.txt*<br/>
 
-Enriched and depleted reads counts should closely amount those of the initial fastq file
+Enriched and depleted reads counts should closely amount those of the initial fastq file (R1+R2)
 
 
 
