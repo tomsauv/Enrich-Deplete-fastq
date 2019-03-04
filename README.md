@@ -54,7 +54,7 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 
 *head counts.txt*<br/>
 
-The sum of enriched and depleted reads should be close to initial read counts
+Enriched and depleted reads counts should closely amount those of the initial fastq file
 
 
 
