@@ -11,7 +11,7 @@ The "query.fasta" file includes scaffolds/sequences
 
 **1) Index the sequence file**
 
-*bwa  index  query.fasta*
+*bwa index query.fasta*
 
 **2) Run the actual read mapping and pipe results to samtools (adjust -t parameters to your number of cores)**
 
