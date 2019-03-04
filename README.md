@@ -38,13 +38,18 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 
 # COUNT reads in fastq files to check
 **Initial fastq file**<br/>
+
 *echo "Raw fastq"> counts.txt*<br/>
 *echo $(zcat R1.fastq.gz|wc -l)/4|bc >> counts.txt*<br/>
+
 **Enriched fastq file**<br/>
-*echo "Enriched fastq" >> counts.txt*<br/>
+
+*echo "enriched fastq" >> counts.txt*<br/>
 *echo $(cat enriched.fastq|wc -l)/4|bc >> counts.txt*<br/>
+
 **Depleted fastq file**<br/>
-*echo "Depleted fastq" >> counts.txt*<br/>
+
+*echo "depleted fastq" >> counts.txt*<br/>
 *echo $(cat depleted.fastq|wc -l)/4|bc >> counts.txt*<br/>
 
 *head counts.txt*<br/>
