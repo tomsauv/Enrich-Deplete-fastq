@@ -13,14 +13,13 @@ We want to enrich/deplete based on scaffolds/sequences found in the "query.fasta
 
 *bwa index query.fasta*
 
-**2) run the actual read mapping**
-
-*(adjust -t parameters to your number of cores) and pipe results to samtools*
+**2) run the actual read mapping and pipe results to samtools (adjust -t parameters to your number of cores)**
 
 *bwa mem -t 40 query.fasta file_R1.fastq.gz file_R2.fastq.gz | samtools sort > query.sorted.bam*
 
-# index the sorted bam file
-samtools index query.sorted.bam
+**3) index the sorted bam file**
+
+*samtools index query.sorted.bam*
 
 # ENRICH
 # Enrich by pulling out reads mapping to the query (with -F flag and integer 4)
