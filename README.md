@@ -2,7 +2,7 @@
 
 Sometimes, we need to ENRICH and/or DEPLETE paired-ends Illumina data sets for particular scaffolds<br/>
 
-Below are some command lines using BWA-mem + Samtools to do so<br/>
+Below are example command lines using BWA-mem + Samtools to do so<br/>
 
 Here, BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with 40 cores<br/>
 
