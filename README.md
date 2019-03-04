@@ -4,17 +4,11 @@ Sometimes, we need to ENRICH and/or DEPLETE next generation sequencing data sets
 
 Below are some command lines using BWA-mem + Samtools to do so for paired end Illumina data sets
 
-All files are placed and output in the current directory
+Note that analyses were run on a linux platform with 40 cores\n
+BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path\n
+All files are placed and output in the current directory\n
 
-Raw zipped data as *.fastq.gz*
-
-The *query.fasta* file includes the scaffolds
-
-Note that analyses were run on a linux platform with 40 cores
-
-BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path
-
-**1) Index the sequence file**
+**1) Index the file containing scaffolds**
 
 *bwa index query.fasta*
 
