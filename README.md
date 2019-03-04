@@ -1,6 +1,7 @@
 # Mapping-tid-bits
 
 Sometimes, we need to ENRICH and/or DEPLETE next generation sequencing data sets for particular scaffolds
+
 Below are some command lines using BWA-mem + Samtools to do so for paired end Illumina data sets
 
 All files are placed and output in the current directory
