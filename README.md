@@ -3,8 +3,10 @@
 Sometimes, we need to deplete/enrich next generation sequencing data sets for a particular genomic compartment
 Below are some command lines using BWA-mem + Samtools to do so for paired end Illumina data sets
 
-Note that analyses were run on a linux platform with 40 cores and BWA-mem v0.7.15-r1140 and Samtools v1.6 in the path.
+Note that analyses were run on a linux platform with 40 cores and BWA-mem v0.7.15-r1140 and Samtools v1.6 in the path
+
 Raw zipped data (as .fastq.gz) are in the current directory. Files will be output in the current directory
+
 We want to enrich/deplete based on scaffolds/sequences found in the "query.fasta" file that is also placed in the current directory
 
 **1) Index the sequence file**
