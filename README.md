@@ -52,6 +52,7 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 *echo "Depleted" >> counts.txt*<br/>
 *echo $(cat depleted.fastq|wc -l)/4|bc >> counts.txt*<br/>
 
+**Display counts on screen**<br/>
 *head counts.txt*<br/>
 
 Enriched and depleted reads counts should closely amount those of the initial fastq file
