@@ -35,3 +35,8 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 **Extract reads to fastq file**
 
 *samtools fastq -f 4 depleted.sorted.bam > depleted.fastq*
+
+# count data in fastq files
+*echo $(zcat R1.fastq.gz|wc -l)/4|bc*<br/>
+*echo $(cat enriched.fastq|wc -l)/4|bc*<br/>
+*echo $(cat depleted.fastq|wc -l)/4|bc*<br/>
