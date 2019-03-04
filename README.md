@@ -9,7 +9,7 @@ Note that analyses were run on a linux platform with 40 cores and BWA-mem v0.7.1
 Raw zipped data (as .fastq.gz) are in the current directory. Files will be output in the current directory
 We want to enrich/deplete based on scaffolds/sequences found in the "query.fasta" file that is also placed in the current directory
 
-# index the sequence file
+**1) index the sequence file**
 bwa index query.fasta
 # run the actual read mapping (adjust -t parameters to your number of cores) and pipe results to samtools
 bwa mem -t 40 query.fasta file_R1.fastq.gz file_R2.fastq.gz | samtools sort > query.sorted.bam
