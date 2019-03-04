@@ -1,6 +1,6 @@
 # Mapping-tid-bits
 
-Sometimes, we need to ENRICH and/or DEPLETE next generation sequencing data sets for particular scaffolds<br/>
+Sometimes, we need to ENRICH and/or DEPLETE paired-ends Illumina data sets for particular scaffolds<br/>
 
 Below are some command lines using BWA-mem + Samtools to do so<br/>
 
@@ -61,7 +61,7 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 
 *head counts.txt*<br/>
 
-Enriched and depleted reads counts should closely amount those of the initial fastq file (R1+R2)
+Enriched and depleted reads counts should closely amount those of the initial fastq files (R1+R2)
 
 
 
