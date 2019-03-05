@@ -1,6 +1,6 @@
 # Mapping-tid-bits
 
-Sometimes, we need to ENRICH and/or DEPLETE paired-ends Illumina data set for a particular genomic compartments<br/>
+Sometimes, we need to ENRICH and/or DEPLETE paired-ends Illumina data set for a particular target<br/>
 
 Below are example command lines using BWA-mem + Samtools to do so<br/>
 
