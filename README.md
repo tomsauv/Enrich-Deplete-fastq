@@ -59,7 +59,7 @@ File with scaffolds: query.fasta<br/>
 
 *head counts.txt*<br/>
 
-When summed, R1 enriched and R1 depleted reads counts should equal those of the initial R1 fastq files 
+When summed, enriched and depleted reads counts should equal those of the raw R1 fastq file
 
 
 
