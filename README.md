@@ -1,6 +1,6 @@
 # Mapping-tid-bits
 
-Sometimes, we need to ENRICH and/or DEPLETE paired-ends Illumina data for reads matching/not matching set of scaffolds<br/>
+Sometimes, we need to ENRICH and/or DEPLETE paired-ends Illumina data for reads matching/not matching a set of scaffolds<br/>
 
 Below are example command lines using BWA-mem + Samtools to do so<br/>
 
