@@ -6,7 +6,7 @@ Below are example command lines using BWA-mem + Samtools to do so<br/>
 
 Here, BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with 40 cores<br/>
 
-Raw Illumina data: R1.fastq R2.fastq<br/>
+Raw Illumina data: Raw_R1.fastq Raw_R2.fastq<br/>
 File with scaffolds: query.fasta<br/>
 
 **1) Index the file containing scaffolds**
@@ -15,7 +15,7 @@ File with scaffolds: query.fasta<br/>
 
 **2) Run the actual read mapping and pipe results to samtools (adjust -t parameters to your number of cores)**
 
-*bwa mem -t 40 query.fasta R1.fastq R2.fastq | samtools sort > query.sorted.bam*
+*bwa mem -t 40 query.fasta Raw_R1.fastq Raw_R2.fastq | samtools sort > query.sorted.bam*
 
 **3) Index the sorted bam file**
 
@@ -39,8 +39,8 @@ File with scaffolds: query.fasta<br/>
 
 *samtools fastq depleted.sorted.bam -1 depleted_R1.fastq -2 depleted_R2.fastq -0 /dev/null -n*
 
-# COUNT reads in fastq files to check
-**Initial fastq file (R1)**<br/>
+# COUNT reads in R1 fastq files to check
+**Raw (initial) fastq file (R1)**<br/>
 
 *echo "Raw (R1)" > counts.txt*<br/>
 *echo $(cat R1.fastq|wc -l)/4|bc >> counts.txt*<br/>
