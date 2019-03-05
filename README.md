@@ -6,6 +6,9 @@ Below are example command lines using BWA-mem + Samtools to do so<br/>
 
 Here, BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with 40 cores<br/>
 
+Raw Illumina data: R1.fastq.gz R2.fastq.gz<br/>
+File with scaffolds: query.fasta<br/>
+
 **1) Index the file containing scaffolds**
 
 *bwa index query.fasta*
