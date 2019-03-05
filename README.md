@@ -25,7 +25,7 @@ Here, BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platfor
 
 **Extract the reads to fastq file**
 
-*samtools fastq -F 4 enriched.sorted.bam > enriched.fastq*
+*samtools fastq enriched.sorted.bam -1 enriched_R1.fastq -2 enriched_R2.fastq -0 /dev/null -n*
 
 # and/or DEPLETE (keep non-matching reads)
 **Deplete by pulling out reads not mapping to query (with -f flag and integer 4)**
@@ -34,7 +34,7 @@ Here, BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platfor
 
 **Extract reads to fastq file**
 
-*samtools fastq -f 4 depleted.sorted.bam > depleted.fastq*
+*samtools fastq depleted.sorted.bam -1 depleted_R1.fastq -2 depleted_R2.fastq -0 /dev/null -n*
 
 # COUNT reads in fastq files to check
 **Initial fastq file (R1)**<br/>
