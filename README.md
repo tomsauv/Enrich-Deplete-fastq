@@ -40,17 +40,17 @@ File with scaffolds: query.fasta<br/>
 *samtools fastq depleted.sorted.bam -1 depleted_R1.fastq -2 depleted_R2.fastq -0 /dev/null -n*
 
 # COUNT reads in R1 fastq files to check
-**Raw (initial) fastq file (R1)**<br/>
+**Raw (initial) R1 fastq file**<br/>
 
 *echo "Raw (R1)" > counts.txt*<br/>
 *echo $(cat R1.fastq|wc -l)/4|bc >> counts.txt*<br/>
 
-**Enriched fastq file (contains R1+R2)**<br/>
+**Enriched R1 fastq file**<br/>
 
 *echo "Enriched (R1)" >> counts.txt*<br/>
 *echo $(cat enriched_R1.fastq|wc -l)/4|bc >> counts.txt*<br/>
 
-**Depleted fastq file (contains R1+R2)**<br/>
+**Depleted R1 fastq file**<br/>
 
 *echo "Depleted (R1)" >> counts.txt*<br/>
 *echo $(cat depleted_R1.fastq|wc -l)/4|bc >> counts.txt*<br/>
@@ -59,7 +59,7 @@ File with scaffolds: query.fasta<br/>
 
 *head counts.txt*<br/>
 
-When summed, enriched and depleted reads counts should equal those of the initial fastq files (R1+R2) 
+When summed, R1 enriched and R1 depleted reads counts should equal those of the initial R1 fastq files 
 
 
 
