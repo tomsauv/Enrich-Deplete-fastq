@@ -42,22 +42,19 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 # COUNT reads in R1 fastq files to check
 **Raw (initial) R1 fastq file**<br/>
 
-*echo "Raw (R1)" > counts.txt*<br/>
-*echo $(cat R1.fastq|wc -l)/4|bc >> counts.txt*<br/>
+*cat Raw_R1.fastq | echo -e "Raw\t" $((`wc -l`/4)) > counts.txt*<br/>*
 
 **Enriched R1 fastq file**<br/>
 
-*echo "Enriched (R1)" >> counts.txt*<br/>
-*echo $(cat enriched_R1.fastq|wc -l)/4|bc >> counts.txt*<br/>
+*cat enriched_R1.fastq | echo -e "Enriched_R1\t" $((`wc -l`/4)) >> counts.txt*<br/>*
 
 **Depleted R1 fastq file**<br/>
 
-*echo "Depleted (R1)" >> counts.txt*<br/>
-*echo $(cat depleted_R1.fastq|wc -l)/4|bc >> counts.txt*<br/>
+*cat depleted_R1.fastq | echo -e "Depleted_R1\t" $((`wc -l`/4)) >> counts.txt*<br/>*
 
 **Display counts on screen**<br/>
 
-*head counts.txt*<br/>
+*column counts.txt*<br/>
 
 When summed, enriched and depleted reads counts should equal those of the raw R1 fastq file
 
