@@ -1,4 +1,4 @@
-# Enrich/Deplete fastq
+# Mapping Workflow to sort fastq
 
 Sometimes, we need to ENRICH and/or DEPLETE paired-ends Illumina data set for a particular target<br/>
 
