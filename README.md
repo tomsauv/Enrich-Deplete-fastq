@@ -68,12 +68,11 @@ The sum of enriched and depleted reads counts should equal those of the raw R1 f
 
 # Extra: Single-end data such as Nanopore or Pacbio<br/>
 
-In case you are working with single end data such as as long reads, you may use the following command:<br/>
+In case you are working with single end data such as long reads, you may use the following command:<br/>
 
 ```bwa mem -t 40 query.fasta raw_single-end.fastq | samtools sort > query.sorted.bam```<br/>
-**Enrich**<br/>
+**Enrich**(or use ```-F 4``` or ```-F 2052``` to exclude unmapped or unmapped+secondary alignment, respectively)<br/> 
 ```samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam```<br/>
-(or use ```-F 2052``` to exclude unmapped+secondary alignment)<br/> 
 ```samtools fastq  enriched.sorted.bam -F 4 -0 enriched_SE.fastq```<br/> 
 **Deplete**<br/>
 ```samtools view -b -f 4 query.sorted.bam > depleted.sorted.bam```<br/>
