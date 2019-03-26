@@ -22,7 +22,7 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 ```samtools index query.sorted.bam```<br/>
 
 # ENRICH target (skip unmapped reads)<br/>
-**Enrich skipping unmapped reads ```-F 4``` (thus keeping mapped reads)**<br/>
+**Enrich by skipping unmapped reads ```-F 4``` (thus keeping mapped reads)**<br/>
 
 ```samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam```<br/>
 
