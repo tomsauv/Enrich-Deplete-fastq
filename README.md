@@ -24,45 +24,45 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 # ENRICH target (skip unmapped reads)<br/>
 **Enrich by keeping mapped reads (-f ) and skipping unmapped reads (-F 4)**<br/>
 
-*samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam*<br/>
+```samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam```<br/>
 
-(Use flags *-f 2 -F 2052* if you want to only keep proper pairs (thus skip singletons) and exclude unmapped reads + secondary alignments)<br/>
+(Use flags ```-f 2 -F 2052``` if you want to only keep proper pairs (thus skip singletons) and exclude unmapped reads + secondary alignments)<br/>
 
 **Extract the reads to fastq file**<br/>
 
-*samtools fastq enriched.sorted.bam -1 enriched_R1.fastq -2 enriched_R2.fastq -0 /dev/null -n*<br/>
+```samtools fastq enriched.sorted.bam -1 enriched_R1.fastq -2 enriched_R2.fastq -0 /dev/null -n```<br/>
 
 # and/or DEPLETE target (keep unmapped reads)<br/>
 **Deplete by keeping unmapped reads (-f 4) and skipping mapped reads (-F 3)**<br/>
 
-*samtools view -b -f 4 -F 3 query.sorted.bam > depleted.sorted.bam*<br/>
+```samtools view -b -f 4 -F 3 query.sorted.bam > depleted.sorted.bam```<br/>
 
-(*-F 3* is to be thorough, but it may be omitted)<br/>
+(```-F 3``` is to be thorough, but it may be omitted)<br/>
 
 **Extract reads to fastq file**<br/>
 
-*samtools fastq depleted.sorted.bam -1 depleted_R1.fastq -2 depleted_R2.fastq -0 /dev/null -n*<br/>
+```samtools fastq depleted.sorted.bam -1 depleted_R1.fastq -2 depleted_R2.fastq -0 /dev/null -n```<br/>
 
 # COUNT reads in R1 fastq files to check<br/>
 **Raw (initial) R1 fastq file**<br/>
 
-*cat raw_R1.fastq | echo -e "Rawfile_R1\t" $((\`wc -l\`/4)) > counts.txt*<br/>
+```cat raw_R1.fastq | echo -e "Rawfile_R1\t" $((\`wc -l\`/4)) > counts.txt```<br/>
 
 **Enriched R1 fastq file**<br/>
 
-*cat enriched_R1.fastq | echo -e "Enriched_R1\t" $((\`wc -l\`/4)) >> counts.txt*<br/>
+```cat enriched_R1.fastq | echo -e "Enriched_R1\t" $((\`wc -l\`/4)) >> counts.txt```<br/>
 
 **Depleted R1 fastq file**<br/>
 
-*cat depleted_R1.fastq | echo -e "Depleted_R1\t" $((\`wc -l\`/4)) >> counts.txt*<br/>
+```cat depleted_R1.fastq | echo -e "Depleted_R1\t" $((\`wc -l\`/4)) >> counts.txt```<br/>
 
 **Sum Enriched+Depleted R1 fastq files**<br/>
 
-*cat enriched_R1.fastq depleted_R1.fastq | echo -e "Enriched+Depleted\t" $((\`wc -l\`/4)) >> counts.txt*<br/>
+```cat enriched_R1.fastq depleted_R1.fastq | echo -e "Enriched+Depleted\t" $((\`wc -l\`/4)) >> counts.txt```<br/>
 
 **Display counts on screen**<br/>
 
-*head counts.txt*<br/>
+```head counts.txt```<br/>
 
 The sum of enriched and depleted reads counts should equal those of the raw R1 fastq file<br/>
 
@@ -71,7 +71,7 @@ The sum of enriched and depleted reads counts should equal those of the raw R1 f
 In case you are working with single end data such as as long reads<br/>
 You may use the following command:<br/>
 
-*bwa mem -t 40 query.fasta raw_single-end.fastq | samtools sort > query.sorted.bam*<br/>
+```bwa mem -t 40 query.fasta raw_single-end.fastq | samtools sort > query.sorted.bam```<br/>
 **Enrich**<br/>
 *samtools view -b -F 4 query.sorted.bam > depleted.sorted.bam*<br/>
 **Deplete**<br/>
