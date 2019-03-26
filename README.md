@@ -4,8 +4,8 @@ Sometimes, we need to ENRICH and/or DEPLETE paired-ends Illumina data set for a 
 
 Below are example command lines using BWA-mem + Samtools to do so<br/>
 
-Raw Illumina data: *raw_R1.fastq* and *raw_R2.fastq*<br/>
-File with scaffolds: *query.fasta*<br/>
+Raw Illumina data: ```raw_R1.fastq``` and ```raw_R2.fastq```<br/>
+File with scaffolds: ```query.fasta```<br/>
 
 BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with 40 cores<br/>
 
