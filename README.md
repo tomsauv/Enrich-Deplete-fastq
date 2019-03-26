@@ -72,9 +72,10 @@ In case you are working with single end data such as as long reads<br/>
 You may use the following command:<br/>
 
 *bwa mem -t 40 query.fasta raw_single-end.fastq | samtools sort > query.sorted.bam*
-**Enrich** *samtools view -b -f 4 query.sorted.bam > depleted.sorted.bam*
-
-
+**Enrich**
+*samtools view -b -f 4 query.sorted.bam > depleted.sorted.bam*
+**Deplete**
+*samtools view -b -f 4 -F 3 query.sorted.bam > depleted.sorted.bam*
 
 
 
