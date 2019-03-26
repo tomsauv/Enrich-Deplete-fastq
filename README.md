@@ -65,14 +65,13 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 ```head counts.txt```<br/>
 
 The sum of enriched and depleted R1 reads counts should equal those of the raw R1 fastq file<br/>
-(if you used flags ```-f 2 -F 2052``` the number of reads will be less than in the raw R1 fastq file)<br/>
+(if you used flags ```-f 2 -F 2052```to enrich, the sum will be less than in the raw R1 fastq file)<br/>
 
 # Extra: Single-end data such as Nanopore or Pacbio<br/>
 
-In case you are working with single end data such as long reads, you may use the following command:<br/>
 ```bwa index query.fasta```<br/>
 ```bwa mem -t 40 query.fasta raw_single-end.fastq | samtools sort > query.sorted.bam```<br/>
-```samtools index query.sorted.bam```
+```samtools index query.sorted.bam```<br/>
 **Enrich**(or use ```-F 4``` or ```-F 2052``` to exclude unmapped or unmapped+secondary alignment, respectively)<br/> 
 ```samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam```<br/>
 ```samtools fastq  enriched.sorted.bam -F 4 -0 enriched_SE.fastq```<br/> 
