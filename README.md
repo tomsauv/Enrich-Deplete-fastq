@@ -66,7 +66,7 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 
 The sum of enriched and depleted reads counts should equal those of the raw R1 fastq file
 
-**Single end data**<br/>
+# Single end data
 
 
 
