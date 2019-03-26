@@ -77,6 +77,7 @@ In case you are working with single end data such as as long reads, you may use 
 ```samtools fastq  enriched.sorted.bam -F 4 -0 enriched_SE.fastq```<br/> 
 **Deplete**<br/>
 ```samtools view -b -f 4 query.sorted.bam > depleted.sorted.bam```<br/>
+```samtools fastq  depleted.sorted.bam -f 4 -0 depleted_SE.fastq```<br/>
 
 
 
