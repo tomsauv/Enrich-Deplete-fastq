@@ -64,9 +64,17 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 
 *head counts.txt*<br/>
 
-The sum of enriched and depleted reads counts should equal those of the raw R1 fastq file
+The sum of enriched and depleted reads counts should equal those of the raw R1 fastq file<br/>
 
-# Extra: Single end data
+# Extra: Single-end data
+
+In case you are working with single end data such as as long reads<br/>
+You may use the following command:<br/>
+
+*bwa mem -t 40 query.fasta raw_single-end.fastq | samtools sort > query.sorted.bam*
+**Enrich** *samtools view -b -f 4 query.sorted.bam > depleted.sorted.bam*
+
+
 
 
 
