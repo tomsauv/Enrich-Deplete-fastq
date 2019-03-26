@@ -26,7 +26,7 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 
 *samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam*<br/>
 
-(*Use flags -f 2 -F 2052* if you want to only keep proper pairs and thus exclude singletons, unmapped reads and secondary alignments)<br/>
+(Use flags *-f 2* if you want to only keep proper pairs (thus skip singletons) and *-F 2052* to exclude unmapped reads and secondary alignments)<br/>
 
 **Extract the reads to fastq file**<br/>
 
