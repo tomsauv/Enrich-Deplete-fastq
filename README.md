@@ -1,4 +1,4 @@
-# Mapping workflow to sort fastq
+# Mapping workflow to sort Paired-ends fastq
 
 Sometimes, we need to ENRICH and/or DEPLETE paired-ends Illumina data set for a particular target<br/>
 
@@ -66,7 +66,7 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 
 The sum of enriched and depleted reads counts should equal those of the raw R1 fastq file
 
-# Single end data
+# Extra: Single end data
 
 
 
