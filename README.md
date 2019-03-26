@@ -24,9 +24,9 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 # ENRICH target (skip unmapped reads)<br/>
 **Enrich by keeping mapped reads (-f ) and skipping unmapped reads (-F 4)**<br/>
 
-*samtools view -b -f 3 -F 4 query.sorted.bam > enriched.sorted.bam*<br/>
+*samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam*<br/>
 
-(*-f 3* to be thorough, but it may be omitted)<br/>
+(*-f 2 -F 2052* if you want to keep proper pairs and exclude secondary alignment)<br/>
 
 **Extract the reads to fastq file**<br/>
 
