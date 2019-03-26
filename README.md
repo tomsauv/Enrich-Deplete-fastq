@@ -70,7 +70,7 @@ The sum of enriched and depleted R1 reads counts should equal those of the raw R
 # Extra: Single-end data such as Nanopore or Pacbio<br/>
 
 ```bwa index query.fasta```<br/>
-```bwa mem -t 40 query.fasta raw_single-end.fastq | samtools sort > query.sorted.bam```<br/>
+```bwa mem -t 40 query.fasta raw_single_end.fastq | samtools sort > query.sorted.bam```<br/>
 ```samtools index query.sorted.bam```<br/>
 **Enrich** (use ```-F 4``` to exclude unmapped or ```-F 2052``` to exclude unmapped + secondary alignments)<br/> 
 ```samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam```<br/>
