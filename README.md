@@ -26,6 +26,8 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 
 *samtools view -b -f 3 -F 4 query.sorted.bam > enriched.sorted.bam*
 
+(-f 3 to be thorough, but it may be omitted)
+
 **Extract the reads to fastq file**
 
 *samtools fastq enriched.sorted.bam -1 enriched_R1.fastq -2 enriched_R2.fastq -0 /dev/null -n*
@@ -34,6 +36,8 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 **Deplete by keeping unmapped reads (-f 4) and skipping mapped reads (-F 3)**
 
 *samtools view -b -f 4 -F 3 query.sorted.bam > depleted.sorted.bam*
+
+(-F 3 is to be thorough, but it may be omitted)
 
 **Extract reads to fastq file**
 
