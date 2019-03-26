@@ -72,7 +72,7 @@ The sum of enriched and depleted R1 reads counts should equal those of the raw R
 ```bwa index query.fasta```<br/>
 ```bwa mem -t 40 query.fasta raw_single-end.fastq | samtools sort > query.sorted.bam```<br/>
 ```samtools index query.sorted.bam```<br/>
-**Enrich**(or use ```-F 4``` or ```-F 2052``` to exclude unmapped or unmapped+secondary alignment, respectively)<br/> 
+**Enrich** (use ```-F 4``` to exclude unmapped or ```-F 2052``` to exclude unmapped + secondary alignments)<br/> 
 ```samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam```<br/>
 ```samtools fastq  enriched.sorted.bam -F 4 -0 enriched_SE.fastq```<br/> 
 **Deplete**<br/>
