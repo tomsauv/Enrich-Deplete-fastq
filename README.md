@@ -11,15 +11,15 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 
 **1) Index the file containing scaffolds**<br/>
 
-```*bwa index query.fasta*```<br/>
+```bwa index query.fasta```<br/>
 
 **2) Run the actual read mapping and pipe results to samtools (adjust -t parameters to your number of cores)**<br/>
 
-*bwa mem -t 40 query.fasta raw_R1.fastq raw_R2.fastq | samtools sort > query.sorted.bam*<br/>
+```bwa mem -t 40 query.fasta raw_R1.fastq raw_R2.fastq | samtools sort > query.sorted.bam```<br/>
 
 **3) Index the sorted bam file**<br/>
 
-*samtools index query.sorted.bam*<br/>
+```samtools index query.sorted.bam```<br/>
 
 # ENRICH target (skip unmapped reads)<br/>
 **Enrich by keeping mapped reads (-f ) and skipping unmapped reads (-F 4)**<br/>
