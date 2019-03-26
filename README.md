@@ -65,7 +65,7 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 ```head counts.txt```<br/>
 
 The sum of enriched and depleted R1 reads counts should equal those of the raw R1 fastq file<br/>
-(if you used flags ```-f 2 -F 2052```to enrich, the sum will be less than in the raw R1 fastq file)<br/>
+(if you used flags ```-f 2 -F 2052``` to enrich, the sum will not be equal but less)<br/>
 
 # Extra: Single-end data such as Nanopore or Pacbio<br/>
 
