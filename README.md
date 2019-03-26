@@ -26,7 +26,7 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 
 *samtools view -b -f 3 -F 4 query.sorted.bam > enriched.sorted.bam*
 
-(-f 3 to be thorough, but it may be omitted)
+(*-f 3* to be thorough, but it may be omitted)
 
 **Extract the reads to fastq file**
 
@@ -37,7 +37,7 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 
 *samtools view -b -f 4 -F 3 query.sorted.bam > depleted.sorted.bam*
 
-(-F 3 is to be thorough, but it may be omitted)
+(*-F 3* is to be thorough, but it may be omitted)
 
 **Extract reads to fastq file**
 
@@ -66,6 +66,7 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 
 The sum of enriched and depleted reads counts should equal those of the raw R1 fastq file
 
+**Single end data**<br/>
 
 
 
