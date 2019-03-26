@@ -11,7 +11,7 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 
 **1) Index the file containing scaffolds**<br/>
 
-*bwa index query.fasta*<br/>
+```*bwa index query.fasta*```<br/>
 
 **2) Run the actual read mapping and pipe results to samtools (adjust -t parameters to your number of cores)**<br/>
 
