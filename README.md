@@ -33,11 +33,11 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a linux platform with
 ```samtools fastq enriched.sorted.bam -1 enriched_R1.fastq -2 enriched_R2.fastq -0 /dev/null -n```<br/>
 
 # and/or DEPLETE target (keep unmapped reads)<br/>
-**Deplete by keeping unmapped reads (-f 4) and skipping mapped reads (-F 3)**<br/>
+**Deplete by keeping unmapped reads ```-f 4``` (thus skipping mapped reads)**<br/>
 
-```samtools view -b -f 4 -F 3 query.sorted.bam > depleted.sorted.bam```<br/>
+```samtools view -b -f 4 query.sorted.bam > depleted.sorted.bam```<br/>
 
-(```-F 3``` is to be thorough, but it may be omitted)<br/>
+(Unlike above, we cannot sort proper pairs since such information is gained via mapping and we are segregating unmapped reads...)
 
 **Extract reads to fastq file**<br/>
 
@@ -68,14 +68,13 @@ The sum of enriched and depleted reads counts should equal those of the raw R1 f
 
 # Extra: Single-end data<br/>
 
-In case you are working with single end data such as as long reads<br/>
-You may use the following command:<br/>
+In case you are working with single end data such as as long reads, you may use the following command:<br/>
 
 ```bwa mem -t 40 query.fasta raw_single-end.fastq | samtools sort > query.sorted.bam```<br/>
 **Enrich**<br/>
-*samtools view -b -F 4 query.sorted.bam > depleted.sorted.bam*<br/>
+```samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam```<br/>
 **Deplete**<br/>
-*samtools view -b -f 4 query.sorted.bam > depleted.sorted.bam*<br/>
+```samtools view -b -f 4 query.sorted.bam > depleted.sorted.bam```<br/>
 
 
 
