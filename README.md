@@ -1,4 +1,4 @@
-# Mapping workflow to sort Paired-ends fastq<br/>
+# Workflow to sort Paired-ends fastq<br/>
 
 Sometimes, we need to ENRICH and/or DEPLETE paired-ends Illumina data set for a particular target<br/>
 
