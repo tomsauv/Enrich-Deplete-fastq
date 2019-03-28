@@ -11,26 +11,36 @@ BWA-mem v0.7.15-r1140 and Samtools v1.6 are in the path on a Linux platform<br/>
 
 **1) Index the file containing scaffolds**<br/>
 
-```bwa index query.fasta```<br/>
+```
+bwa index query.fasta
+```
 
 **2) Run the actual read mapping and pipe results to samtools (adjust -t parameters to your number of cores)**<br/>
 
-```bwa mem -t 40 query.fasta raw_R1.fastq raw_R2.fastq | samtools sort > query.sorted.bam```<br/>
+```
+bwa mem -t 40 query.fasta raw_R1.fastq raw_R2.fastq | samtools sort > query.sorted.bam
+```
 
 **3) Index the sorted bam file**<br/>
 
-```samtools index query.sorted.bam```<br/>
+```
+samtools index query.sorted.bam
+```
 
 # ENRICH target (skip unmapped reads)<br/>
 **Enrich by skipping unmapped reads ```-F 4``` (thus keeping mapped reads)**<br/>
 
-```samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam```<br/>
+```
+samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam
+```
 
 (Use flags ```-f 2 -F 2052``` if you want to only keep proper pairs and exclude unmapped reads + secondary alignments)<br/>
 
 **Extract the reads to fastq file**<br/>
 
-```samtools fastq enriched.sorted.bam -1 enriched_R1.fastq -2 enriched_R2.fastq -0 /dev/null -n```<br/>
+```
+samtools fastq enriched.sorted.bam -1 enriched_R1.fastq -2 enriched_R2.fastq -0 /dev/null -n
+```
 
 # and/or DEPLETE target (keep unmapped reads)<br/>
 **Deplete by keeping unmapped reads ```-f 4``` (thus skipping mapped reads)**<br/>
