@@ -45,46 +45,64 @@ samtools fastq enriched.sorted.bam -1 enriched_R1.fastq -2 enriched_R2.fastq -0 
 # and/or DEPLETE target (keep unmapped reads)<br/>
 **Deplete by keeping unmapped reads ```-f 4``` (thus skipping mapped reads)**<br/>
 
-```samtools view -b -f 4 query.sorted.bam > depleted.sorted.bam```<br/>
+```
+samtools view -b -f 4 query.sorted.bam > depleted.sorted.bam
+```
 
 (Unlike above, we cannot sort proper pairs since such information is gained via mapping and we are segregating unmapped reads...)
 
 **Extract reads to fastq file**<br/>
 
-```samtools fastq depleted.sorted.bam -1 depleted_R1.fastq -2 depleted_R2.fastq -0 /dev/null -n```<br/>
+```
+samtools fastq depleted.sorted.bam -1 depleted_R1.fastq -2 depleted_R2.fastq -0 /dev/null -n
+```
 
 # COUNT reads in R1 fastq files to check<br/>
 **Raw (initial) R1 fastq file**<br/>
 
-```cat raw_R1.fastq | echo -e "Rawfile_R1\t" $((\`wc -l\`/4)) > counts.txt```<br/>
+```
+cat raw_R1.fastq | echo -e "Rawfile_R1\t" $((\`wc -l\`/4)) > counts.txt
+```
 
 **Enriched R1 fastq file**<br/>
 
-```cat enriched_R1.fastq | echo -e "Enriched_R1\t" $((\`wc -l\`/4)) >> counts.txt```<br/>
+```
+cat enriched_R1.fastq | echo -e "Enriched_R1\t" $((\`wc -l\`/4)) >> counts.txt
+```
 
 **Depleted R1 fastq file**<br/>
 
-```cat depleted_R1.fastq | echo -e "Depleted_R1\t" $((\`wc -l\`/4)) >> counts.txt```<br/>
+```
+cat depleted_R1.fastq | echo -e "Depleted_R1\t" $((\`wc -l\`/4)) >> counts.txt
+```
 
 **Sum Enriched + Depleted R1 fastq files**<br/>
 
-```cat enriched_R1.fastq depleted_R1.fastq | echo -e "Enriched+Depleted\t" $((\`wc -l\`/4)) >> counts.txt```<br/>
+```
+cat enriched_R1.fastq depleted_R1.fastq | echo -e "Enriched+Depleted\t" $((\`wc -l\`/4)) >> counts.txt
+```
 
 **Display counts on screen**<br/>
 
-```head counts.txt```<br/>
+```
+head counts.txt
+```
 
 The sum of enriched and depleted R1 reads counts should equal those of the raw R1 fastq file<br/>
 (if you used flags ```-f 2 -F 2052``` to enrich, the sum will not be equal but less)<br/>
 
 # Extra: Single-end data<br/>
 
-```bwa index query.fasta```<br/>
-```bwa mem -t 40 query.fasta raw_single_end.fastq | samtools sort > query.sorted.bam```<br/>
-```samtools index query.sorted.bam```<br/>
+```
+bwa index query.fasta
+bwa mem -t 40 query.fasta raw_single_end.fastq | samtools sort > query.sorted.bam```<br/>
+samtools index query.sorted.bam
+```
 **Enrich** (use ```-F 4``` to exclude unmapped or ```-F 2052``` to exclude unmapped + secondary alignments)<br/> 
-```samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam```<br/>
-```samtools fastq  enriched.sorted.bam -F 4 -0 enriched_SE.fastq```<br/> 
+```
+samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam
+samtools fastq  enriched.sorted.bam -F 4 -0 enriched_SE.fastq
+```
 **Deplete**<br/>
 ```samtools view -b -f 4 query.sorted.bam > depleted.sorted.bam```<br/>
 ```samtools fastq  depleted.sorted.bam -f 4 -0 depleted_SE.fastq```<br/>
