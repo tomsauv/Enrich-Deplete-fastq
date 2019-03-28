@@ -34,7 +34,8 @@ samtools index query.sorted.bam
 samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam
 ```
 
-(Use flags ```-f 2 -F 2052``` if you want to only keep proper pairs and exclude unmapped reads + secondary alignments)<br/>
+(Use flags ```-f 2 -F 260``` if you want to only keep proper pairs and exclude unmapped reads + secondary alignments
+or flags ```-f 2 -F 2308``` to also exclude supplementary alignments)<br/>
 
 **Extract the reads to fastq file**<br/>
 
@@ -89,7 +90,7 @@ head counts.txt
 ```
 
 The sum of enriched and depleted R1 reads counts should equal those of the raw R1 fastq file<br/>
-(if you used flags ```-f 2 -F 2052``` to enrich, the sum will not be equal but less)<br/>
+(if you used flags ```-f 2 -F 260``` to enrich, the sum will not be equal but less)<br/>
 
 # Extra: Single-end data<br/>
 
