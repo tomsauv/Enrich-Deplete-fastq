@@ -21,7 +21,7 @@ bwa index query.fasta
 bwa mem -t 40 query.fasta raw_R1.fastq raw_R2.fastq | samtools sort > query.sorted.bam
 ```
 
-**3) Index the sorted bam file (not mandatory but does not hurt)**<br/>
+**3) Index the sorted bam file (not mandatory but does not hurt if you plan to visualize the alignment in e.g. IGV)**<br/>
 
 ```
 samtools index query.sorted.bam
