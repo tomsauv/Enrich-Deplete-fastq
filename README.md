@@ -35,7 +35,7 @@ samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam
 ```
 
 (Use flags ```-f 2 -F 260``` if you want to only keep proper pairs and exclude unmapped reads + secondary alignments
-or flags ```-f 2 -F 2308``` to also exclude supplementary alignments)<br/>
+or flags ```-f 2 -F 2308``` to exclude unmapped reads + secondary alignments + supplementary alignments. But if you have circular molecule or structural variation, using ```-F 4 or -F 260``` is safer. My understanding is that reads mapping at the edge of a circular contig are considered supplementary alignment and would be excluded with the flag ```-F 2308```)<br/>
 
 **Extract the reads to fastq file**<br/>
 
