@@ -99,7 +99,7 @@ bwa index query.fasta
 bwa mem -t 40 query.fasta raw_single_end.fastq | samtools sort > query.sorted.bam
 samtools index query.sorted.bam
 ```
-**Enrich** (use ```-F 4``` to exclude unmapped or ```-F 260``` or ```-F 2308``` for further sorting, see above))<br/> 
+**Enrich** (use ```-F 4``` to exclude unmapped or ```-F 260``` or ```-F 2308``` for further sorting, see above)<br/> 
 ```
 samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam
 samtools fastq  enriched.sorted.bam -F 4 -0 enriched_SE.fastq
