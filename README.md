@@ -90,7 +90,7 @@ head counts.txt
 ```
 
 The sum of enriched and depleted R1 reads counts should equal those of the raw R1 fastq file<br/>
-(if you used flags ```-f 2 -F 260``` to enrich, the sum will not be equal but less)<br/>
+(if you used flags ```-f 2 -F 260``` or ```-f 2 -F 2308``` to enrich, the sum may not be equal but less)<br/>
 
 # Extra: Single-end data<br/>
 
