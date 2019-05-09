@@ -68,7 +68,7 @@ cat raw_R1.fastq | echo -e "Rawfile_R1\t" $((\`wc -l\`/4)) > counts.txt
 **Enriched R1 fastq file**<br/>
 
 ```
-cat enriched_R1.fastq | echo -e "Enriched_R1\t" $((\`wc -l\`/4)) >> counts.txt
+cat enriched_R1.fastq | echo -e "Enriched_R1\t" $((`wc -l`/4)) >> counts.txt
 ```
 
 **Depleted R1 fastq file**<br/>
