@@ -80,7 +80,7 @@ cat depleted_R1.fastq | echo -e "Depleted_R1\t" $((\`wc -l\`/4)) >> counts.txt
 **Sum Enriched + Depleted R1 fastq files**<br/>
 
 ```
-cat enriched_R1.fastq depleted_R1.fastq | echo -e "Enriched+Depleted\t" $((\`wc -l\`/4)) >> counts.txt
+cat enriched_R1.fastq depleted_R1.fastq | echo -e "Enriched+Depleted\t" $((`wc -l`/4)) >> counts.txt
 ```
 
 **Display counts on screen**<br/>
