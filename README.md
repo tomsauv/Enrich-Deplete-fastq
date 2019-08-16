@@ -113,5 +113,6 @@ samtools fastq  depleted.sorted.bam -f 4 -0 depleted_SE.fastq
 
 # Cautionary note<br/>
 
-If the enriched fastq files produced is to be used for genome assembly, it is preferable to adjust flags so that only proper read pairs are kept to avoid issues with the assembler (i..e maintaining synchronized paired-end files).
+for paired-end data set, if the sorted fastq files produced are to be used for genome assembly, then it is preferable to adjust flags so that only proper read pairs are output to avoid issues with the assembler (i..e maintaining synchronized paired-end files).
+Always check your bam files prior and after samtools sorting to visualize a summary of their content (total mapped, propoer pairs, etc, using the flagstat command of Samtools) 
 
