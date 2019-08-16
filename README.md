@@ -111,4 +111,7 @@ samtools fastq  depleted.sorted.bam -f 4 -0 depleted_SE.fastq
 ```
 **Count** (as above replacing with the appropriate fastq file name)<br/>
 
-
+# Cautionary note<br/>
+```
+If the enriched fastq files produced is to be used for genome assembly, it is preferable to adjust flags so that only proper read pairs are kept to avoid issues with the assembler (i..e maintaining synchronized paired-end files).
+```
