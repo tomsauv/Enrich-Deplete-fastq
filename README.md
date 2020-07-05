@@ -123,6 +123,9 @@ bwa mem -t 40 query.fasta raw_single_end.fasta | samtools sort > query.sorted.ba
 ```
 samtools fasta  enriched.sorted.bam -F 4 -0 enriched_SE.fasta
 ```
+```
+samtools fasta  depleted.sorted.bam -f 4 -0 depleted_SE.fastq
+```
 
 # Cautionary note<br/>
 
