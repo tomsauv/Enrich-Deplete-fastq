@@ -92,7 +92,7 @@ head counts.txt
 The sum of enriched and depleted R1 reads counts should equal those of the raw R1 fastq file<br/>
 (if you used flags ```-f 2 -F 260``` or ```-f 2 -F 2308``` to enrich, the sum may not be equal but less)<br/>
 
-# Extra: Single-end data<br/>
+# Extra: Single-end fastq data<br/>
 
 ```
 bwa index query.fasta
@@ -104,12 +104,22 @@ samtools index query.sorted.bam
 samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam
 samtools fastq  enriched.sorted.bam -F 4 -0 enriched_SE.fastq
 ```
+Note that we use the flag -0
+
 **Deplete**<br/>
 ```
 samtools view -b -f 4 query.sorted.bam > depleted.sorted.bam
 samtools fastq  depleted.sorted.bam -f 4 -0 depleted_SE.fastq
 ```
 **Count** (as above replacing with the appropriate fastq file name)<br/>
+
+# Extra: Single-end fasta data<br/>
+
+Same as above except mapping is done from a single-end fasta file raw_single_end.fasta and output of samtools indicated as samtools fasta
+```
+bwa mem -t 40 query.fasta raw_single_end.fasta | samtools sort > query.sorted.bam
+samtools fastq  enriched.sorted.bam -F 4 -0 enriched_SE.fasta
+```
 
 # Cautionary note<br/>
 
