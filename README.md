@@ -115,10 +115,13 @@ samtools fastq  depleted.sorted.bam -f 4 -0 depleted_SE.fastq
 
 # Extra: Single-end fasta data<br/>
 
-Same as above except mapping is done from a single-end fasta file raw_single_end.fasta and output of samtools indicated as samtools fasta
+Same as above except mapping is done from a single-end fasta file and output of samtools indicated with the ```fasta``` command
+
 ```
 bwa mem -t 40 query.fasta raw_single_end.fasta | samtools sort > query.sorted.bam
-samtools fastq  enriched.sorted.bam -F 4 -0 enriched_SE.fasta
+```
+```
+samtools fasta  enriched.sorted.bam -F 4 -0 enriched_SE.fasta
 ```
 
 # Cautionary note<br/>
