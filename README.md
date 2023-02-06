@@ -102,14 +102,14 @@ samtools index query.sorted.bam
 **Enrich** (use ```-F 4``` to exclude unmapped or ```-F 260``` or ```-F 2308``` for further sorting, see above)<br/> 
 ```
 samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam
-samtools fastq  enriched.sorted.bam -0 enriched_SE.fastq
+samtools fastq enriched.sorted.bam -0 enriched_SE.fastq
 ```
 Note that we use the flag -0
 
 **Deplete**<br/>
 ```
 samtools view -b -f 4 query.sorted.bam > depleted.sorted.bam
-samtools fastq  depleted.sorted.bam -0 depleted_SE.fastq
+samtools fastq depleted.sorted.bam -0 depleted_SE.fastq
 ```
 **Count** (as above replacing with the appropriate fastq file name)<br/>
 
@@ -122,11 +122,11 @@ bwa mem -t 40 query.fasta raw_single_end.fasta | samtools sort > query.sorted.ba
 ```
 ```
 samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam
-samtools fasta  enriched.sorted.bam -0 enriched_SE.fasta
+samtools fasta enriched.sorted.bam -0 enriched_SE.fasta
 ```
 ```
 samtools view -b -f 4 query.sorted.bam > depleted.sorted.bam
-samtools fasta  depleted.sorted.bam -0 depleted_SE.fasta
+samtools fasta depleted.sorted.bam -0 depleted_SE.fasta
 ```
 
 # Cautionary note<br/>
