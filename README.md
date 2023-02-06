@@ -121,10 +121,12 @@ Same as above except mapping is done from a single-end fasta file and output of 
 bwa mem -t 40 query.fasta raw_single_end.fasta | samtools sort > query.sorted.bam
 ```
 ```
-samtools fasta  enriched.sorted.bam -F 4 -0 enriched_SE.fasta
+samtools view -b -F 4 query.sorted.bam > enriched.sorted.bam
+samtools fasta  enriched.sorted.bam -0 enriched_SE.fasta
 ```
 ```
-samtools fasta  depleted.sorted.bam -f 4 -0 depleted_SE.fasta
+samtools view -b -f 4 query.sorted.bam > depleted.sorted.bam
+samtools fasta  depleted.sorted.bam -0 depleted_SE.fasta
 ```
 
 # Cautionary note<br/>
