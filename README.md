@@ -133,5 +133,5 @@ samtools fasta depleted.sorted.bam -0 depleted_SE.fasta
 
 For paired-end data sets, if the sorted fastq files produced are to be used for genome assembly, then it is preferable to adjust flags so that only proper read pairs are output to avoid issues with the assembler (i.e. maintaining synchronized paired-end files)<br/>
 
-It is good practice to always check your bam files prior and after samtools sorting to visualize a summary of their content using the ```flagstat``` command of Samtools (i.e. numbers of total mapped reads, proper pairs, secondary alignments, etc)<br/> 
+It is good practice to always check your ```.bam``` files prior and after samtools sorting to visualize a summary of their content using the ```flagstat``` command of Samtools (i.e. numbers of total mapped reads, proper pairs, secondary alignments, etc)<br/> 
 
